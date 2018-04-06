@@ -38,8 +38,5 @@ $productos[] = array('id' => $row['idProducto'],
 		<?php }?>
 		 </tbody>
 		</table>
-    <script type="text/javascript">
-      alert("pruebas");
-    </script>
 	</body>
 </html>
