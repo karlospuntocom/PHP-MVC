@@ -1,5 +1,5 @@
 <?php
-require ('clases/Config.php');
-require ('clases/configuration.php');
-require ('clases/DataBase.php');
+require ('Model/Config.php');
+require ('Model/configuration.php');
+require ('Model/DataBase.php');
 ?>
