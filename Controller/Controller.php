@@ -12,10 +12,10 @@ class Controller {
 	public function invoke()
 	{
 		if (!isset($_GET['book'])) {
-			$books = $this->model->getBookList();
+			$notifs = $this->model->getBookList();
 			include 'view/booklist.php';
 		} else {
-			$book = $this->model->getBook($_GET['book']);
+			$notif = $this->model->getBook($_GET['book']);
 			include 'view/viewbook.php';
 		}
 		
