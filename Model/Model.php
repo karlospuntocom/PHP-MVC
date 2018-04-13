@@ -1,20 +1,51 @@
 <?php
-include_once("model/OrdenServicio.php");
+include("OrdenServicio.php");
+require('Model/includes.php');
 
 class Model {
 	public function getOrderList()
 	{
-		return array(
-			"1" => new OrdenServicio("1", "1030647", "26/11/2008 07:22", "Orden número 1", "32", "170.000"),
-			"2" => new OrdenServicio("2", "9411", "16/02/2014 09:54", "Orden número 2", "57", "1.900.000"),
-			"3" => new OrdenServicio("3", "1023", "24/01/2000 01:01", "Orden número 3", "11", "10.000")
-		);
+		$db = DataBase::singleton();
+		$consulta = $db->executeQue("select * from ordenservicio");
+		$total = $db->numRows($consulta);
+		$orders = null;
+		if ($total > 0) {
+			while ($row = $db->arrayResult($consulta)) {
+				$orders[] = array(
+					'id' => $row['id'],
+					'idCliente' => $row['idCliente'],
+					'fechaHora' => $row['fechaHora'],
+					'descripcion' => $row['descripcion'],
+					'cantidadProductos' => $row['cantidadProductos'],
+					'costoTotal' => $row['costoTotal']
+				);
+				}
+			}
+		return $orders;
 	}
 
 	public function getOrder($order)
 	{
-		$allOrders = $this->getOrderList();
-		return $allOrders[$order];
+		$db = DataBase::singleton();
+		$order = $_GET["order"];
+		// $config = Config::singleton();
+		$consulta = $db->executeQue("select * from ordenservicio where id =".$order);
+		$total = $db->numRows($consulta);
+		if ($total > 0) {
+			while ($row = $db->arrayResult($consulta)) {
+				$allOrders = array(
+					'id' => $row['id'],
+					'idCliente' => $row['idCliente'],
+					'fechaHora' => $row['fechaHora'],
+					'descripcion' => $row['descripcion'],
+					'cantidadProductos' => $row['cantidadProductos'],
+					'costoTotal' => $row['costoTotal']
+				);
+			}
+		}
+
+		return $allOrders;
+		
 	}
 }
 
