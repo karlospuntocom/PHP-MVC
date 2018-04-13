@@ -11,12 +11,18 @@ class Controller {
 
 	public function invoke()
 	{
-		if (!isset($_GET['order'])) {
+		if (!isset($_GET['new']) && !isset($_GET['order'])) {
 			$orders = $this->model->getOrderList();
 			include 'view/orderList.php';
-		} else {
-			$order = $this->model->getOrder($_GET['order']);
+		} elseif (!isset($_GET['new']) && isset($_GET['order'])) {
+			$order = $this->model->getOrder($_GET['order']);			
 			include 'view/viewOrder.php';
+		} elseif (isset($_GET['new']) && isset($_GET['order'])) {
+			$order = $this->model->getOrder($_GET['order']);			
+			include 'view/modifyOrder.php';
+		} elseif (isset($_GET['new']) && !isset($_GET['order'])) {
+			$order = $this->model->getOrder($_GET['order']);			
+			include 'view/createOrder.php';
 		}
 		
 	}
