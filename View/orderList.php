@@ -1,3 +1,23 @@
+<?php
+require ('../Model/includes.php');
+$db = DataBase::singleton();
+$consulta = $db->executeQue("select * from OrdenServicio");
+$total = $db->numRows($consulta);
+$orders = null;
+if ($total > 0) {
+	while ($row = $db->arrayResult($consulta)) {
+		$oders[] = array(
+			'id' => $row['id'],
+			'idCliente' => $row['idCliente'],
+			'fechaHora' => $row['fechaHora'],
+			'descripcion' => $row['descripcion'],
+			'cantidadProductos' => $row['cantidadProductos'],
+			'costoTotal' => $row['costoTotal']
+		);
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

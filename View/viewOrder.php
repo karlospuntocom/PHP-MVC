@@ -1,3 +1,19 @@
+ <?php
+require ('../Model/includes.php');
+$db = DataBase::singleton();
+
+$opselect = $_GET["order"];
+// $config = Config::singleton();
+$consulta = $db->executeQue("select * from OrdenServicio where id =".$opselect);
+$total = $db->numRows($consulta);
+if ($total > 0) {
+	while ($row = $db->arrayResult($consulta)) {
+		$carreras[] = array('id' => $row['idcarrera'],
+		'nombre' => $row['nombre']);
+	}
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
