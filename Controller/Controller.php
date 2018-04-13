@@ -11,12 +11,12 @@ class Controller {
 
 	public function invoke()
 	{
-		if (!isset($_GET['book'])) {
-			$notifs = $this->model->getBookList();
-			include 'view/booklist.php';
+		if (!isset($_GET['order'])) {
+			$orders = $this->model->getOrderList();
+			include 'view/orderlist.php';
 		} else {
-			$notif = $this->model->getBook($_GET['book']);
-			include 'view/viewbook.php';
+			$order = $this->model->getOrder($_GET['order']);
+			include 'view/vieworder.php';
 		}
 		
 	}

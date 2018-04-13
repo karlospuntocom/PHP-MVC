@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require ('includes.php');
 $db = DataBase::singleton();
 // $config = Config::singleton();
@@ -39,4 +39,11 @@ $productos[] = array('id' => $row['idProducto'],
 		 </tbody>
 		</table>
 	</body>
-</html>
+</html> -->
+
+
+<?php
+	include_once("controller/Controller.php");
+	$controller = new Controller();
+	$controller->invoke();
+?>

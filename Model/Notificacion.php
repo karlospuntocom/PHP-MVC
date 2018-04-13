@@ -3,16 +3,16 @@
 class Notificacion
 {
 	private $id;
-	private $idAutorOrigen;
-	private $idAutorDestino;
+	private $idUsuarioOrigen;
+	private $idUsuarioDestino;
 	private $fechaHora;
 	private $descripcion;
 	
-	public function __construct($id, $idAutorOrigen, $idAutorDestino, $fechaHora, $descripcion)
+	public function __construct($id, $idUsuarioOrigen, $idUsuarioDestino, $fechaHora, $descripcion)
 	{
 		$this->id = $id;
-		$this->idAutorOrigen = $idAutorOrigen;
-		$this->idAutorDestino = $idAutorDestino;
+		$this->idUsuarioOrigen = $idUsuarioOrigen;
+		$this->idUsuarioDestino = $idUsuarioDestino;
 		$this->fechaHora = $fechaHora;
 		$this->descripcion = $descripcion;
 	}
