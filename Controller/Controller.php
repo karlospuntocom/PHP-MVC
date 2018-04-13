@@ -13,10 +13,10 @@ class Controller {
 	{
 		if (!isset($_GET['order'])) {
 			$orders = $this->model->getOrderList();
-			include 'view/orderlist.php';
+			include 'view/orderList.php';
 		} else {
 			$order = $this->model->getOrder($_GET['order']);
-			include 'view/vieworder.php';
+			include 'view/viewOrder.php';
 		}
 		
 	}
