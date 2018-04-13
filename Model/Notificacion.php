@@ -2,11 +2,11 @@
 
 class Notificacion
 {
-	private $id;
-	private $idUsuarioOrigen;
-	private $idUsuarioDestino;
-	private $fechaHora;
-	private $descripcion;
+	public $id;
+	public $idUsuarioOrigen;
+	public $idUsuarioDestino;
+	public $fechaHora;
+	public $descripcion;
 	
 	public function __construct($id, $idUsuarioOrigen, $idUsuarioDestino, $fechaHora, $descripcion)
 	{

@@ -2,12 +2,12 @@
 
 class OrdenServicio
 {
-	private $id;
-	private $idCliente;
-	private $fechaHora;
-	private $descripcion;
-	private $cantidadProductos;
-	private $costoTotal;
+	public $id;
+	public $idCliente;
+	public $fechaHora;
+	public $descripcion;
+	public $cantidadProductos;
+	public $costoTotal;
 	
 	public function __construct($id, $idCliente, $fechaHora, $descripcion, $cantidadProductos, $costoTotal)
 	{
