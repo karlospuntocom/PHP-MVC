@@ -20,8 +20,7 @@ class Controller {
 		} elseif (isset($_GET['new']) && isset($_GET['order'])) {
 			$order = $this->model->getOrder($_GET['order']);			
 			include 'view/modifyOrder.php';
-		} elseif (isset($_GET['new']) && !isset($_GET['order'])) {
-			$order = $this->model->getOrder($_GET['order']);			
+		} elseif (isset($_GET['new']) && !isset($_GET['order'])) {		
 			include 'view/createOrder.php';
 		}
 		

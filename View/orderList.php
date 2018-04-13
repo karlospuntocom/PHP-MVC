@@ -12,6 +12,6 @@
 			}
 		?>
 	</table>
-	<a href="View/createOrder.php"> Crear </a>
+	<a href="View/createOrder.php?new=1"> Crear </a>
 </body>
 </html>
